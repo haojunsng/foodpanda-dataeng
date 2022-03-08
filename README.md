@@ -13,7 +13,7 @@ Foodpanda Data Engineering Technical Assessment
 
 ## Codes to Run
 
-1. Run ```python setup.py``` first to create the dataset. Feel free to change the name of the dataset in setup.py (Default = "foodpanda_tables"
+1. Run ```python setup.py``` first to create the dataset in BigQuery.
 2. Run ```python question1.py``` to read the data from BigQuery as well as to load the output table in the dataset created in step 1.
 3. Do the same for ```python question2.py``` and ```python question3.py``` .
 4. Output results can be viewed in this [link](https://console.cloud.google.com/bigquery?project=foodpanda-assessment-343503).
