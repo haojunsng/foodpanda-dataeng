@@ -1,4 +1,7 @@
-import functions
+from functions import get_df, write_df
+import pandas as pd
+import geopy
+from geopy import distance
 
 """
 The function question1() first isolates the row for Singapore's Jurong Island Port.
@@ -19,10 +22,11 @@ def question1(dataset_name):
     results = []
 
     for each in df_without_jurong_island.itertuples(index=False):
+        port_name = each[2]
         each_coords = (float(each[4]), float(each[5]))
         dist = geopy.distance.geodesic(sg_jurong_island_coords, each_coords)
-        results.append(dist)
-        
+        results.append(dist.km)
+    
     df_without_jurong_island['dist'] = results
     nearest_5_ports = df_without_jurong_island.sort_values(by='dist', ascending=True).head()
     answer1 = nearest_5_ports[['port_name', 'dist']].reset_index(drop=True)

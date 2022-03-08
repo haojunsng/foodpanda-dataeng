@@ -1,4 +1,6 @@
-import functions
+from functions import get_df, write_df
+import geopy
+from geopy import distance
 
 """
 The function question3 takes in the latitude and longitude of potential distress locations,
@@ -24,4 +26,4 @@ def question3(dataset_name, latitude, longitude):
     write_df(answer3, dataset_name, 'Table for Question 3')
 
 if __name__ == "__main__":
-    question3(dataset_name, 32.610982, -38.706256)
+    question3("foodpanda_tables", 32.610982, -38.706256)
