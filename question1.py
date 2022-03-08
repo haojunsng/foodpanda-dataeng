@@ -1,5 +1,13 @@
 import functions
 
+"""
+The function question1() first isolates the row for Singapore's Jurong Island Port.
+A for loop is run to compute the geodesic distance (a shortest arc between 2 points on a curved surface - Earth)
+between Singapore's Jurong Island Port and every other port in the dataframe.
+The computed geodesic distance is then appended as a column and the dataframe is sorted by that column.
+The top 5 nearest ports are obtained after sorting.
+"""
+
 def question1():
 
     df = get_df()
@@ -11,7 +19,6 @@ def question1():
     results = []
 
     for each in df_without_jurong_island.itertuples(index=False):
-        port_name = each[2]
         each_coords = (float(each[4]), float(each[5]))
         dist = geopy.distance.geodesic(sg_jurong_island_coords, each_coords)
         results.append(dist)
