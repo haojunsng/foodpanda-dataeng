@@ -1,3 +1,10 @@
+# Ignore Jupyter Notebook and Checkpoints
+Foodpanda_Assessment.ipynb
+.ipynb_checkpoints
+
+# Ignore config folder
+config/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
