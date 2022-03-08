@@ -5,7 +5,7 @@ The function question3 takes in the latitude and longitude of potential distress
 and returns the nearest port with essential provisions such as water, fuel_oil and diesel.
 """
 
-def question3(latitude, longitude):
+def question3(dataset_name, latitude, longitude):
 
     df = get_df()
 
@@ -21,7 +21,7 @@ def question3(latitude, longitude):
     ports_with_provisions['dist'] = results
     answer3 = ports_with_provisions.sort_values(by='dist', ascending=True)[['country', 'port_name', 'port_latitude', 'port_longitude']].head(1)
 
-    write_df(answer3, 'Table for Question 3')
+    write_df(answer3, dataset_name, 'Table for Question 3')
 
 if __name__ == "__main__":
-    question3(32.610982, -38.706256)
+    question3(dataset_name, 32.610982, -38.706256)

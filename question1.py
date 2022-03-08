@@ -8,7 +8,7 @@ The computed geodesic distance is then appended as a column and the dataframe is
 The top 5 nearest ports are obtained after sorting.
 """
 
-def question1():
+def question1(dataset_name):
 
     df = get_df()
 
@@ -27,7 +27,7 @@ def question1():
     nearest_5_ports = df_without_jurong_island.sort_values(by='dist', ascending=True).head()
     answer1 = nearest_5_ports[['port_name', 'dist']].reset_index(drop=True)
 
-    write_df(answer1, 'Table for Question 1')
+    write_df(answer1, dataset_name, 'Table for Question 1')
 
 if __name__ == "__main__":
-    question1()
+    question1("foodpanda_tables")
