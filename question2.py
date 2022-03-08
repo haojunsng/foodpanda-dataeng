@@ -1,4 +1,5 @@
-import functions
+from functions import get_df, write_df
+import pandas as pd
 
 """
 The function question2 first indexes out all rows containing data for ports with cargo wharf.
